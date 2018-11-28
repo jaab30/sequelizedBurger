@@ -1,0 +1,50 @@
+<div class="headerDiv">
+    <h1>Eat-Da-Burger!</h1>
+    <img src="/img/burger_200.png" alt="">
+</div>
+<div class="container">
+    <div class="readyBurgerDiv">
+        <h2 class="burgerList">Burgers ready to eat..!</h2>
+
+        <ul>
+            {{#each burgers}}
+            {{#unless devoured}}
+            <li>
+                <p class="eachBurger">{{this.id}} - {{this.burger_name}}
+                    <button data-id="{{this.id}}" class="devourBurger">Devour It!</button></p>
+            </li>
+            {{/unless}}
+            {{/each}}
+        </ul>
+    </div>
+
+    <div class="devouredBuregerDiv">
+
+        <h2 class="devouredH2">Burgers in my tummy..!</h2>
+
+        <ul>
+            {{#each burgers}}
+            {{#if devoured}}
+            <li>
+                <p class="eachBurger">{{this.id}} - {{this.burger_name}}<button data-id="{{this.id}}" class="deleteBurger">X</button></p>
+            </li>
+            {{/if}}
+            {{/each}}
+        </ul>
+    </div>
+</div>
+
+<div class="addBurgerDiv">
+
+    <h2 class="addTitle">Add a Burger</h2>
+    <form class="addBurger-form">
+
+        <div class="form-group">
+            <input type="text" id="burgerName" name="name">
+        </div>
+        <button type="submit">Add Burger</button>
+    </form>
+    <p class="homeText">Enter a Burger you want to eat. Click the "Submit" button</p>
+
+
+</div>
