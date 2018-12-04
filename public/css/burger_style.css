@@ -77,9 +77,11 @@ ul {
     width: 50%;
     text-align: left;
     padding-right: 20px;
+    padding-left: 20px;
+
     /* background:rgba(255, 215, 83, 0.5); */
 }
-.devouredBuregerDiv {
+.devouredBurgerDiv {
     float: left;
     width: 50%;
     text-align: left;
@@ -114,7 +116,7 @@ button {
     font-family: 'Roboto', sans-serif;  
     font-size: .8em;
     color: white;
-    padding: 3px 5px;
+    padding: 3px 10px;
     font-weight: 500;
     border-radius: 1em 1em 1em 1em;
     border: none;
@@ -151,6 +153,31 @@ button:active{
     font-size: .9em;
     margin: -3px -2px 0 0;
 }
+
+.eachCustomer {
+    float: left;
+    width: 75%;
+    margin: 5px 10px 0 10px;
+}
+
+#customerName{
+    width: 100px;
+    float: left;
+    margin: 5px 0px 0 20px;
+    padding-left: 5px;
+    
+
+
+}
+
+.customerDevour-btn{
+    float:right;
+    margin: 4px 0 0 0px;
+
+
+}
+
+
     
 
 

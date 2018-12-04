@@ -5,7 +5,7 @@
 // });
 $(function () {
 
-    $(".devourBurger").on("click", function () {
+    $(".customerDevour-btn").on("click", function () {
         var id = $(this).data("id");
 
         var devourState = {
@@ -19,6 +19,22 @@ $(function () {
         }).then(
             function () {
                 console.log("changed Devoured", devourState);
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        );
+
+
+        var newCustomer = {
+            customerName: $("#customerName").val().trim(),
+        };
+        // Send the POST request.
+        $.ajax("/api/customers", {
+            type: "POST",
+            data: newCustomer
+        }).then(
+            function () {
+                console.log("created new Customer");
                 // Reload the page to get the updated list
                 location.reload();
             }
@@ -61,4 +77,24 @@ $(function () {
             }
         );
     });
+
+    // $(".customerDevour").on("submit", function (event) {
+    //     // Make sure to preventDefault on a submit event.
+    //     event.preventDefault();
+
+    //     var newCustomer = {
+    //         customerName: $("#customerName").val().trim(),
+    //     };
+    //     // Send the POST request.
+    //     $.ajax("/api/customers", {
+    //         type: "POST",
+    //         data: newCustomer
+    //     }).then(
+    //         function () {
+    //             console.log("created new Customer");
+    //             // Reload the page to get the updated list
+    //             location.reload();
+    //         }
+    //     );
+    // });
 });

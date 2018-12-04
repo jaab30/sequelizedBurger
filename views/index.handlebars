@@ -10,15 +10,22 @@
             {{#each burgers}}
             {{#unless devoured}}
             <li>
-                <p class="eachBurger">{{this.id}} - {{this.burger_name}}
-                    <button data-id="{{this.id}}" class="devourBurger">Devour It!</button></p>
+                <p class="eachCustomer">{{this.id}} - {{this.burger_name}}
+                    <form class="customerDevour">
+                        {{!-- <div class="form-group">
+                            <input type="text" id="customerName" name="customerName" placeholder="Cust Name">
+                        </div> --}}
+                        <button data-id="{{this.id}}" class="customerDevour-btn" type="submit">Devour it..!</button>
+                    </form>
+                </p>
+
             </li>
             {{/unless}}
             {{/each}}
         </ul>
     </div>
 
-    <div class="devouredBuregerDiv">
+    <div class="devouredBurgerDiv">
 
         <h2 class="devouredH2">Burgers in my tummy..!</h2>
 

@@ -6,7 +6,6 @@ var db = require("../models");
 var router = express.Router();
 
 router.get("/", function (req, res) {
-
     db.Burger.findAll({}).then(function (dbBurger) {
 
         var burgersObject = {
@@ -20,6 +19,7 @@ router.get("/", function (req, res) {
 router.post("/api/burgers", function (req, res) {
     db.Burger.create({
         burger_name: req.body.name,
+        // CustomerID: customer.id
     }).then(function (dbBurger) {
         res.json(dbBurger);
     });
@@ -42,6 +42,17 @@ router.delete("/api/burgers/:id", function (req, res) {
         }
     }).then(function (dbBurger) {
         res.json(dbBurger);
+    });
+
+});
+
+
+
+router.post("/api/customers", function (req, res) {
+    db.Customer.create({
+        name: req.body.customerName,
+    }).then(function (dbCustomer) {
+        res.json(dbCustomer);
     });
 
 });
